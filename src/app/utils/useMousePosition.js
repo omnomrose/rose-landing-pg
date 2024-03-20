@@ -8,9 +8,22 @@ const useMousePosition = () => {
     };
 
     useEffect(() => {
-        window.addEventListener("mousemove", updateMousePosition);
+        const throttle = (callback, delay) => {
+            let previousCall = new Date().getTime();
+            return function () {
+                const time = new Date().getTime();
+                if ((time - previousCall) >= delay) {
+                    previousCall = time;
+                    callback.apply(null, arguments);
+                }
+            };
+        };
 
-        return () => window.removeEventListener("mousemove", updateMousePosition);
+        const throttledUpdateMousePosition = throttle(updateMousePosition, 20);
+
+        window.addEventListener("mousemove", throttledUpdateMousePosition);
+
+        return () => window.removeEventListener("mousemove", throttledUpdateMousePosition);
     }, []);
 
     return mousePosition;

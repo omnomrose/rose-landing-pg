@@ -3,6 +3,7 @@ import styles from './page.module.scss'
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import useMousePosition from './utils/useMousePosition';
+import Header from '@/components/Header';
 
 export default function Home() {
 
@@ -12,6 +13,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <Header />
       <motion.div
         className={styles.mask}
         animate={{

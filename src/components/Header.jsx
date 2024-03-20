@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useScroll} from 'framer-motion';
+import { useScroll } from 'framer-motion';
 
 export default function Header() {
     const container = useRef();
@@ -20,7 +20,7 @@ export default function Header() {
 
     return (
         <div ref={container}>
-            <svg className="w-full mb-40" viewBox="0 0 250 250"> 
+            <svg className="w-full" viewBox="0 0 250 250"> 
                 <path fill="none" id="circle" d="M125,0 A75,75 0 1,0 200,50 A75,75"/> 
                 <text className="text-[6px] lowercase">
                     {
