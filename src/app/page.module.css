@@ -1,0 +1,36 @@
+.main {
+  height: 100vh;
+}
+
+.main .mask,
+.main .body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #afa18f;
+  font-size: 64px;
+  line-height: 66px;
+  cursor: default;
+}
+
+.main .mask .para,
+.main .body .para {
+  width: 1000px;
+  padding: 40px;
+}
+
+.main .mask .span,
+.main .body .span {
+  color: #ffff;
+}
+
+.main .mask {
+  mask-image: url('../../public/mask.svg');
+  mask-repeat: no-repeat;
+  mask-size: 40px;
+  background: #51775B;
+  position: absolute;
+  color: black;
+}
